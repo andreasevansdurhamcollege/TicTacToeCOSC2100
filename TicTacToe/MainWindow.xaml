@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+
+
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,13 +24,18 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="X Player" Grid.Row="0" Grid.Column="0"/>
-        <TextBox x:Name="txtbox_Player1" Grid.Row="0" Grid.Column="0"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Label Content="X Player:" Margin="0,0,5,0"/>
+                <TextBox x:Name="txtbox_XPlayer" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="O Player:" Margin="0,0,5,0"/>
+                <TextBox x:Name="txtbox_OPlayer" Width="150"/>
+            </StackPanel>
+        </StackPanel>
 
-        <Label Content="O Player" Grid.Row="0" Grid.Column="0"/>
-        <TextBox x:Name="txtbox_Player2" Grid.Row="0" Grid.Column="0"/>
-
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -35,18 +46,29 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btn00" Grid.Row="0" Grid.Column="0" FontSize="24"/>
+            <Button x:Name="btn00" Grid.Row="0" Grid.Column="0" FontSize="24" />
             <Button x:Name="btn01" Grid.Row="0" Grid.Column="1" FontSize="24"/>
             <Button x:Name="btn02" Grid.Row="0" Grid.Column="2" FontSize="24"/>
-            
+
             <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" FontSize="24"/>
-            <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" FontSize="24"/>
+            <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" FontSize="24" />
             <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" FontSize="24"/>
-           
+
             <Button x:Name="btn20" Grid.Row="2" Grid.Column="0" FontSize="24"/>
             <Button x:Name="btn21" Grid.Row="2" Grid.Column="1" FontSize="24"/>
             <Button x:Name="btn22" Grid.Row="2" Grid.Column="2" FontSize="24"/>
         </Grid>
 
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <TextBlock Text="Score" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock x:Name="tb_Score_XPlayer" Text="X Player: 0" Margin="0,0,0,5"/>
+            <TextBlock x:Name="tb_Score_OPlayer" Text="O Player: 0" Margin="0,0,0,5"/>
+            <TextBlock x:Name="tb_Cats" Text="Cats: 0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btn_Reset" Content="_Reset" Width="70" Margin="5" ToolTip="Reset the game!"/>
+            <Button x:Name="btn_Exit" Content="E_xit" Width="70" Margin="5" ToolTip="Exit the game!"/>
+        </StackPanel>
     </Grid>
 </Window>
