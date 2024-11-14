@@ -35,6 +35,8 @@
             </StackPanel>
         </StackPanel>
 
+        <TextBlock x:Name="txtblock_CurrentPlayer" Grid.Row="0" Grid.Column="0" Margin="10,70,0,0"/>
+
         <Grid Grid.Row="1" Grid.Column="0" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
